@@ -3,45 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mio Server Discord</title>
+    <title>GameZone Friends - Community Ufficiale</title>
     <style>
+        /* --- Stili Base (Ispirati a Discord) --- */
+        :root {
+            --bg-primary: #313338;
+            --bg-secondary: #2b2d31;
+            --bg-tertiary: #1e1f22;
+            --text-normal: #dbdee1;
+            --text-muted: #949ba4;
+            --discord-blurple: #5865f2;
+            --discord-blurple-hover: #4752c4;
+            --white: #ffffff;
+            --danger: #ed4245;
+        }
+
         body {
-            background-color: #313338; /* Colore sfondo Discord */
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-normal);
+            font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- Intestazione (Navbar) --- */
+        header {
+            background-color: var(--bg-tertiary);
+            width: 100%;
+            padding: 10px 0;
+            display: flex;
             justify-content: center;
-            height: 100vh;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style-type: none;
             margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
         }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        /* --- Contenitore Principale --- */
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* --- Schede (Card) --- */
         .card {
-            background-color: #2b2d31;
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        h1 { margin-bottom: 10px; }
-        p { color: #b5bac1; margin-bottom: 30px; }
-        .btn {
-            background-color: #5865f2;
-            color: white;
+
+        /* --- Sezione Hero (Col gatto!) --- */
+        .hero {
+            text-align: center;
+        }
+
+        .hero-image {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* --- Pulsante d'Invito --- */
+        .btn-invite {
+            background-color: var(--discord-blurple);
+            color: var(--white);
             text-decoration: none;
             padding: 15px 30px;
             border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.2s;
+            display: inline-block;
         }
-        .btn:hover { background-color: #4752c4; }
+
+        .btn-invite:hover {
+            background-color: var(--discord-blurple-hover);
+        }
+
+        /* --- Sezione Regole --- */
+        .rules h2 {
+            color: var(--white);
+            font-size: 22px;
+            border-bottom: 1px solid #4f545c;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .rules ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .rules li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: start;
+        }
+
+        .rule-number {
+            color: var(--danger);
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .rule-text {
+            color: var(--text-normal);
+            flex: 1;
+        }
+
+        /* --- Piè di pagina (Footer) --- */
+        footer {
+            background-color: var(--bg-tertiary);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-top: auto;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Benvenuti nel Server!</h1>
-        <p>Il server ufficiale gestito da Stormattt e Giuntempe, divertiti!</p>
-        <a href="https://discord.gg/Rjtm2R2T" class="btn">Entra nel Server</a>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#rules">REGOLE</a></li>
+            <li><a href="#community">COMMUNITY</a></li>
+            <li><a href="#join">UNISCITI</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="card hero">
+        <img src="https://i.imgur.com/8fWzF8v.png" alt="GameZone Friends Cat Mascot" class="hero-image">
+        <h1>BENVENUTI NEL SERVER!</h1>
+        <p>Unisciti alla community ufficiale di GameZone Friends gestita con passione!</p>
+        <a href="https://discord.gg/Rjtm2R2T" class="btn-invite" id="join">ENTRA NEL SERVER</a>
     </div>
+
+    <div class="card rules" id="rules">
+        <h2>REGOLE DEL SERVER</h2>
+        <ul>
+            <li>
+                <span class="rule-number">1.</span>
+                <span class="rule-text"><strong>Rispetto reciproco:</strong> Tratta tutti i membri con gentilezza e rispetto. Non sono tollerati insulti, molestie o discriminazioni.</span>
+            </li>
+            <li>
+                <span class="rule-number">2.</span>
+                <span class="rule-text"><strong>No spam:</strong> Evita l'invio eccessivo di messaggi, link o immagini non pertinenti. Rispetta i canali tematici.</span>
+            </li>
+            <li>
+                <span class="rule-number">3.</span>
+                <span class="rule-text"><strong>Niente contenuti inappropriati:</strong> È vietato condividere materiale NSFW, illegale o offensivo.</span>
+            </li>
+            <li>
+                <span class="rule-number">4.</span>
+                <span class="rule-text"><strong>Usa i canali corretti:</strong> Assicurati di postare i tuoi contenuti nei canali appropriati per mantenere l'ordine nel server.</span>
+            </li>
+            <li>
+                <span class="rule-number">5.</span>
+                <span class="rule-text"><strong>Ascolta lo staff:</strong> Le decisioni dei moderatori e degli amministratori sono definitive.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 GameZone Friends Community. Ospitato staticamente.</p>
+</footer>
+
 </body>
 </html>
